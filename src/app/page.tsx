@@ -36,24 +36,24 @@ export default function Home() {
               priority
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent z-10" />
+            <div className="absolute inset-0" />
           </div>
         )}
         <div className="absolute inset-0 z-20 flex items-center">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <div className="max-w-xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#151515] dark:text-white">
                 <span className="block mb-2">안전하고 투명한</span>
-                <span className="block text-primary-500">
+                <span className="block text-[#364EFF] dark:text-primary-500">
                   비철금속 거래의 중심
                 </span>
               </h1>
-              <p className="mt-4 mb-8 text-lg text-gray-100 font-light">
+              <p className="mt-4 mb-8 text-lg text-[#545454] dark:text-gray-100 font-light">
                 &ldquo;안전하고 투명한 거래, 실시간 시장 분석&rdquo;
               </p>
               <Link
                 href="/exchange"
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all inline-block"
+                className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-all inline-block"
               >
                 거래소 바로가기
               </Link>

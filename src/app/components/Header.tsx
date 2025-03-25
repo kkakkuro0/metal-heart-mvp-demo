@@ -34,37 +34,38 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transition-colors duration-200 shadow-sm">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <div className="flex items-center space-x-1 transition-transform duration-200 transform group-hover:scale-[1.02]">
-              <span className="text-red-600 text-3xl font-black group-hover:text-red-500 transition-colors">
-                M
-              </span>
-              <div className="flex flex-col leading-none ml-[-2px]">
-                <span className="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                  Metal{" "}
-                  <span className="text-red-600 group-hover:text-red-500 transition-colors">
-                    Heart
+        <div className="flex items-center">
+          {/* Logo - 왼쪽 정렬 (flex-1) */}
+          <div className="flex-1">
+            <Link href="/" className="flex items-center group w-fit">
+              <div className="flex items-center space-x-1 transition-transform duration-200 transform group-hover:scale-[1.02]">
+                <div className="flex flex-col leading-none">
+                  <span className="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                    Metal{" "}
+                    <span className="text-red-600 group-hover:text-red-500 transition-colors">
+                      Heart
+                    </span>
                   </span>
-                </span>
-                <span className="text-[10px] text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase">
-                  금속거래플랫폼
-                </span>
+                  <span className="text-[10px] text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase">
+                    금속거래플랫폼
+                  </span>
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
 
-          {/* Navigation Links (Desktop) */}
-          <nav className="hidden md:flex items-center space-x-1">
-            <NavLink href="/exchange" text="거래소" />
-            <NavLink href="#" text="입출금" />
-            <NavLink href="#" text="투자내역" />
-            <NavLink href="#" text="시황정보" />
+          {/* Navigation Links (Desktop) - 중앙 정렬 */}
+          <nav className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex items-center space-x-2">
+              <NavLink href="/exchange" text="거래소" />
+              <NavLink href="#" text="입출금" />
+              <NavLink href="#" text="투자내역" />
+              <NavLink href="#" text="시황정보" />
+            </div>
           </nav>
 
-          {/* Auth & Theme Buttons (Desktop) */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* Auth & Theme Buttons (Desktop) - 오른쪽 정렬 (flex-1, justify-end) */}
+          <div className="hidden md:flex items-center space-x-3 justify-end flex-1">
             <Link
               href="#"
               className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white transition-colors"
@@ -84,7 +85,7 @@ const Header = () => {
             </Link>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+              className="px-3 py-2 rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
               aria-label="Toggle theme"
             >
               <FontAwesomeIcon
@@ -95,10 +96,10 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex ml-auto">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 mr-2 transition-colors"
+              className="px-3 py-2 rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 mr-2 transition-colors"
               aria-label="Toggle theme"
             >
               <FontAwesomeIcon
