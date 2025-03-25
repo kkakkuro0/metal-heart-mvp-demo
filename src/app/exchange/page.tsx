@@ -82,10 +82,6 @@ export default function ExchangePage() {
         }`}
       >
         <main className="p-6">
-          <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-            비철금속 거래소
-          </h1>
-
           {/* 거래 테이블 */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
             {loading ? (

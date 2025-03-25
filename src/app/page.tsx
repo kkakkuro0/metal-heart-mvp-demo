@@ -44,7 +44,7 @@ export default function Home() {
             <div className="max-w-xl animate-fade-in-right">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#151515] dark:text-white">
                 <span className="block mb-2">비철금속 거래의 미래,</span>
-                <span className="block text-[#364EFF] dark:text-primary-500 drop-shadow-md">
+                <span className="block text-[#324793] dark:text-[#7382b6] drop-shadow-md">
                   NME 플랫폼
                 </span>
               </h1>
@@ -77,12 +77,32 @@ export default function Home() {
       </div>
 
       {/* NME 소개 섹션 */}
-      <section className="py-36 bg-gradient-to-br from-indigo-50 via-blue-50 to-white dark:from-gray-900 dark:via-indigo-950 dark:to-gray-800 relative">
+      <section className="py-40 bg-gradient-to-br from-indigo-50 via-blue-50 to-white dark:from-gray-900 dark:via-indigo-950 dark:to-gray-800 relative">
         <div className="absolute inset-0 bg-pattern opacity-5 dark:opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900 dark:text-white relative inline-block">
-              Nonferrous Metals Exchange, NME
+              <span>
+                <span className="relative">
+                  <span className="text-[#5278FC] font-extrabold text-5xl md:text-5xl">
+                    N
+                  </span>
+                  <span className="text-4xl">onferrous</span>
+                </span>{" "}
+                <span className="relative">
+                  <span className="text-[#8A65BA] font-extrabold text-5xl md:text-5xl">
+                    M
+                  </span>
+                  <span className="text-4xl">etals</span>
+                </span>{" "}
+                <span className="relative">
+                  <span className="text-[#AA5B96] font-extrabold text-5xl md:text-5xl">
+                    E
+                  </span>
+                  <span className="text-4xl">xchange, </span>
+                  <span className="text-[#E6474E] text-5xl">NME</span>
+                </span>
+              </span>
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-red-500 transform translate-y-2"></span>
             </h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">

@@ -40,7 +40,7 @@ const Header = () => {
             <Link href="/" className="flex items-center group w-fit">
               <div className="flex items-center space-x-1 transition-transform duration-200 transform group-hover:scale-[1.02]">
                 <div className="flex flex-col leading-none">
-                  <span className="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  <span className="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight">
                     Metal{" "}
                     <span className="text-red-600 group-hover:text-red-500 transition-colors">
                       Heart

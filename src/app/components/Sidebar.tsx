@@ -34,87 +34,87 @@ const menuItems: MenuItem[] = [
   {
     id: "trading",
     label: "Trading",
-    icon: <FontAwesomeIcon icon={faHandshake} className="h-4 w-4" />,
+    icon: <FontAwesomeIcon icon={faHandshake} className="h-6 w-6" />,
     children: [
       {
         id: "seller",
         label: "Seller",
         href: "#",
-        icon: <FontAwesomeIcon icon={faBuilding} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faBuilding} className="h-4 w-4" />,
       },
       {
         id: "buyer",
         label: "Buyer",
         href: "#",
-        icon: <FontAwesomeIcon icon={faPeopleGroup} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faPeopleGroup} className="h-4 w-4" />,
       },
       {
         id: "investor",
         label: "Investor",
         href: "#",
-        icon: <FontAwesomeIcon icon={faMoneyBillTrendUp} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faMoneyBillTrendUp} className="h-4 w-4" />,
       },
     ],
   },
   {
     id: "financing",
     label: "Financing",
-    icon: <FontAwesomeIcon icon={faPiggyBank} className="h-4 w-4" />,
+    icon: <FontAwesomeIcon icon={faPiggyBank} className="h-6 w-6" />,
     children: [
       {
         id: "collateral",
         label: "실물 담보",
         href: "#",
-        icon: <FontAwesomeIcon icon={faBoxesPacking} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faBoxesPacking} className="h-4 w-4" />,
       },
       {
         id: "crowdfund",
         label: "Crowd Fund",
         href: "#",
-        icon: <FontAwesomeIcon icon={faDollarSign} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faDollarSign} className="h-4 w-4" />,
       },
     ],
   },
   {
     id: "logistics",
     label: "Logistics",
-    icon: <FontAwesomeIcon icon={faBoxesPacking} className="h-4 w-4" />,
+    icon: <FontAwesomeIcon icon={faBoxesPacking} className="h-6 w-6" />,
     href: "#",
   },
   {
     id: "myaccount",
     label: "My Account",
-    icon: <FontAwesomeIcon icon={faUserGear} className="h-4 w-4" />,
+    icon: <FontAwesomeIcon icon={faUserGear} className="h-6 w-6" />,
     children: [
       {
         id: "account-status",
         label: "Account 현황",
         href: "#",
-        icon: <FontAwesomeIcon icon={faUser} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faUser} className="h-4 w-4" />,
       },
       {
         id: "account-trading",
         label: "Trading",
-        icon: <FontAwesomeIcon icon={faHandshake} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faHandshake} className="h-4 w-4" />,
         children: [
           {
             id: "account-seller",
             label: "Seller",
             href: "#",
-            icon: <FontAwesomeIcon icon={faBuilding} className="h-3 w-3" />,
+            icon: <FontAwesomeIcon icon={faBuilding} className="h-4 w-4" />,
           },
           {
             id: "account-buyer",
             label: "Buyer",
             href: "#",
-            icon: <FontAwesomeIcon icon={faPeopleGroup} className="h-3 w-3" />,
+            icon: <FontAwesomeIcon icon={faPeopleGroup} className="h-4 w-4" />,
           },
           {
             id: "account-investor",
             label: "Investor",
             href: "#",
             icon: (
-              <FontAwesomeIcon icon={faMoneyBillTrendUp} className="h-3 w-3" />
+              <FontAwesomeIcon icon={faMoneyBillTrendUp} className="h-4 w-4" />
             ),
           },
         ],
@@ -124,25 +124,25 @@ const menuItems: MenuItem[] = [
         label: "Report",
         href: "#",
         icon: (
-          <FontAwesomeIcon icon={faFileInvoiceDollar} className="h-3 w-3" />
+          <FontAwesomeIcon icon={faFileInvoiceDollar} className="h-4 w-4" />
         ),
       },
       {
         id: "account-history",
         label: "History Data",
-        icon: <FontAwesomeIcon icon={faClockRotateLeft} className="h-3 w-3" />,
+        icon: <FontAwesomeIcon icon={faClockRotateLeft} className="h-4 w-4" />,
         children: [
           {
             id: "account-transaction",
             label: "거래실적",
             href: "#",
-            icon: <FontAwesomeIcon icon={faChartLine} className="h-3 w-3" />,
+            icon: <FontAwesomeIcon icon={faChartLine} className="h-4 w-4" />,
           },
           {
             id: "account-profit",
             label: "손익 분석",
             href: "#",
-            icon: <FontAwesomeIcon icon={faChartPie} className="h-3 w-3" />,
+            icon: <FontAwesomeIcon icon={faChartPie} className="h-4 w-4" />,
           },
         ],
       },
@@ -186,7 +186,13 @@ const Sidebar = ({ collapsed, toggleSidebar }: SidebarProps) => {
         >
           <div className="flex items-center">
             {item.icon && (
-              <span className="mr-2 w-5 text-center">{item.icon}</span>
+              <span
+                className={`${
+                  collapsed ? "mx-auto w-full" : "mr-3 w-7"
+                } text-center flex justify-center`}
+              >
+                {item.icon}
+              </span>
             )}
             <span
               className={`${
@@ -200,7 +206,7 @@ const Sidebar = ({ collapsed, toggleSidebar }: SidebarProps) => {
             <span className="text-gray-500">
               <FontAwesomeIcon
                 icon={isExpanded ? faChevronUp : faChevronDown}
-                className="h-3 w-3"
+                className="h-4 w-4"
               />
             </span>
           )}
@@ -221,21 +227,37 @@ const Sidebar = ({ collapsed, toggleSidebar }: SidebarProps) => {
         collapsed ? "w-16" : "w-64"
       } flex flex-col fixed top-16 left-0 overflow-y-auto`}
     >
-      <div className="p-4 flex justify-end">
-        <button
-          onClick={toggleSidebar}
-          className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-        >
-          {collapsed ? (
-            <FontAwesomeIcon icon={faChevronRight} className="h-5 w-5" />
-          ) : (
-            <FontAwesomeIcon icon={faChevronLeft} className="h-5 w-5" />
-          )}
-        </button>
+      <div className="flex-1 py-4">
+        {menuItems.map((item) => renderMenuItem(item))}
       </div>
 
-      <div className="flex-1 py-2">
-        {menuItems.map((item) => renderMenuItem(item))}
+      <div className="mt-auto py-4 border-t border-gray-200 dark:border-gray-800">
+        <div
+          className="flex items-center py-2 px-4 rounded-md cursor-pointer transition-all
+                  text-gray-800 dark:text-gray-200
+                  hover:bg-gray-100 dark:hover:bg-gray-800"
+          onClick={toggleSidebar}
+        >
+          <div className="flex items-center w-full">
+            <span
+              className={`${
+                collapsed ? "mx-auto w-full" : "mr-3 w-7"
+              } text-center flex justify-center`}
+            >
+              <FontAwesomeIcon
+                icon={collapsed ? faChevronRight : faChevronLeft}
+                className="h-6 w-6"
+              />
+            </span>
+            <span
+              className={`${
+                collapsed ? "opacity-0 absolute" : "opacity-100"
+              } transition-opacity`}
+            >
+              {collapsed ? "메뉴 펼치기" : "메뉴 접기"}
+            </span>
+          </div>
+        </div>
       </div>
     </aside>
   );
