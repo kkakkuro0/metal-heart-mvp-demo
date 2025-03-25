@@ -1,4 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBolt,
@@ -7,33 +12,53 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Banner */}
-      <div className="relative h-[60vh] w-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-gray-900/70 z-10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1605699139319-8e9faafb2a02?q=80&w=2070&auto=format&fit=crop')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-white text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Metal Heart 비철금속 거래소
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl">
-            안전하고 투명한 비철금속 거래를 위한 플랫폼
-          </p>
-          <Link
-            href="/exchange"
-            className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all"
-          >
-            거래소 바로가기
-          </Link>
+      <div className="relative h-[60vh] w-full overflow-hidden">
+        {mounted && (
+          <div className="absolute inset-0">
+            <Image
+              src={
+                resolvedTheme === "dark"
+                  ? "/imgs/mh_dark.png"
+                  : "/imgs/mh_light.png"
+              }
+              alt="Metal Heart 배경"
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent z-10" />
+          </div>
+        )}
+        <div className="absolute inset-0 z-20 flex items-center">
+          <div className="container mx-auto px-4 md:px-8 lg:px-12">
+            <div className="max-w-xl">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                <span className="block mb-2">안전하고 투명한</span>
+                <span className="block text-primary-500">
+                  비철금속 거래의 중심
+                </span>
+              </h1>
+              <p className="mt-4 mb-8 text-lg text-gray-100 font-light">
+                &ldquo;안전하고 투명한 거래, 실시간 시장 분석&rdquo;
+              </p>
+              <Link
+                href="/exchange"
+                className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all inline-block"
+              >
+                거래소 바로가기
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
