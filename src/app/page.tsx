@@ -121,10 +121,7 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 w-full h-40 bg-gradient-to-t from-white to-transparent dark:from-gray-800 dark:to-transparent opacity-80"></div>
         <div className="container mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white animate-fade-in-up">
-            리스크 관리 Model
-            <span className="text-primary-600 dark:text-primary-400 ml-2">
-              (Risk Management)
-            </span>
+            NME만의 리스크 관리 Solution
           </h2>
           <p
             className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-center mb-16 animate-fade-in-up"
@@ -146,7 +143,9 @@ export default function Home() {
                 검증 시스템 강화
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center leading-relaxed">
-                신용평가 시스템을 통한 이용자 및 거래 물품의 검증 시스템 강화
+                신용평가 시스템을 통한
+                <br />
+                이용자 및 거래 물품의 검증 시스템 강화
               </p>
             </div>
 
@@ -162,8 +161,9 @@ export default function Home() {
                 리스크 경감
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center leading-relaxed">
-                ESCROW 계좌와 합의 창고를 통한 담보 관리 및 신용도 강화를 통한
-                리스크 경감
+                ESCROW 계좌와 합의 창고를 통한
+                <br />
+                담보 관리 및 신용도 강화를 통한 리스크 경감
               </p>
             </div>
 
@@ -179,8 +179,9 @@ export default function Home() {
                 모니터링 시스템 강화
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-center leading-relaxed">
-                계약 체결부터 물품 물류까지 실시간 추적을 위한 모니터링 시스템
-                강화
+                계약 체결부터 물품 물류까지
+                <br />
+                실시간 추적을 위한 모니터링 시스템 강화
               </p>
             </div>
           </div>

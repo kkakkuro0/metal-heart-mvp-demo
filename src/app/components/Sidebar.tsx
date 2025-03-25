@@ -174,21 +174,30 @@ const Sidebar = ({ collapsed, toggleSidebar }: SidebarProps) => {
     return (
       <div key={item.id} className="mb-1">
         <div
-          className={`flex items-center justify-between py-2 px-4 rounded-md cursor-pointer transition-all
+          className={`flex items-center ${
+            collapsed ? "justify-center" : "justify-between"
+          } py-2 rounded-md cursor-pointer transition-all
                     ${
                       depth === 0
                         ? "text-gray-800 dark:text-gray-200"
                         : "text-gray-600 dark:text-gray-400"
                     }
-                    hover:bg-gray-100 dark:hover:bg-gray-800`}
-          style={{ paddingLeft: `${depth > 0 ? depth * 12 + 16 : 16}px` }}
+                    hover:bg-gray-100 dark:hover:bg-gray-800
+                    ${collapsed ? "px-1" : "px-4"}`}
+          style={{
+            paddingLeft: collapsed
+              ? "4px"
+              : `${depth > 0 ? depth * 12 + 16 : 16}px`,
+          }}
           onClick={() => (hasChildren ? toggleExpand(item.id) : null)}
         >
           <div className="flex items-center">
             {item.icon && (
               <span
                 className={`${
-                  collapsed ? "mx-auto w-full" : "mr-3 w-7"
+                  collapsed
+                    ? "mx-auto w-10 flex justify-center items-center"
+                    : "mr-3 w-7"
                 } text-center flex justify-center`}
               >
                 {item.icon}
@@ -225,7 +234,7 @@ const Sidebar = ({ collapsed, toggleSidebar }: SidebarProps) => {
     <aside
       className={`h-[calc(100vh-64px)] bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 transition-all duration-300 ${
         collapsed ? "w-16" : "w-64"
-      } flex flex-col fixed top-16 left-0 overflow-y-auto`}
+      } flex flex-col fixed top-16 left-0 overflow-y-auto overflow-x-hidden`}
     >
       <div className="flex-1 py-4">
         {menuItems.map((item) => renderMenuItem(item))}
@@ -233,15 +242,19 @@ const Sidebar = ({ collapsed, toggleSidebar }: SidebarProps) => {
 
       <div className="mt-auto py-4 border-t border-gray-200 dark:border-gray-800">
         <div
-          className="flex items-center py-2 px-4 rounded-md cursor-pointer transition-all
+          className={`flex items-center ${
+            collapsed ? "justify-center" : "justify-between"
+          } py-2 px-2 rounded-md cursor-pointer transition-all
                   text-gray-800 dark:text-gray-200
-                  hover:bg-gray-100 dark:hover:bg-gray-800"
+                  hover:bg-gray-100 dark:hover:bg-gray-800`}
           onClick={toggleSidebar}
         >
           <div className="flex items-center w-full">
             <span
               className={`${
-                collapsed ? "mx-auto w-full" : "mr-3 w-7"
+                collapsed
+                  ? "mx-auto w-10 flex justify-center items-center"
+                  : "mr-3 w-7"
               } text-center flex justify-center`}
             >
               <FontAwesomeIcon
